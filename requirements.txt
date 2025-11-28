@@ -1,0 +1,12 @@
+streamlit
+openai
+numpy
+scikit-learn
+pdfminer.six
+python-docx
+tqdm
+langchain
+python-dotenv
+pandas
+sentence-transformers
+streamlit-lottie

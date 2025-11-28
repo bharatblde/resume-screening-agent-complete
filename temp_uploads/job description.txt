@@ -1,0 +1,29 @@
+Job Title: Data Scientist (Machine Learning)
+
+About the Role:
+We are looking for an experienced Data Scientist to join our AI team. You will build, validate, and deploy ML models to improve product personalization and automate business decisions. The ideal candidate is strong in statistical modeling, feature engineering, and production ML systems.
+
+Responsibilities:
+- Design and implement machine learning models for classification, regression, and ranking tasks.
+- Perform exploratory data analysis, feature engineering, and model selection.
+- Build data pipelines and productionize models using Python frameworks.
+- Collaborate with product and engineering teams to translate business requirements into data solutions.
+- Monitor model performance and implement model retraining strategies.
+
+Required Skills:
+- Proficient in Python (pandas, numpy, scikit-learn).
+- Experience with deep learning frameworks: TensorFlow or PyTorch.
+- Strong knowledge of statistics, A/B testing, and experiment design.
+- Experience with data storage/query tools (SQL, BigQuery).
+- Familiarity with ML deployment tools (Docker, Kubernetes, SageMaker, or similar).
+
+Preferred:
+- Experience with embeddings, semantic search, or recommendation systems.
+- Familiarity with NLP libraries (spaCy, Hugging Face Transformers).
+- Experience with cloud platforms (AWS, GCP, Azure).
+
+Education & Experience:
+- Bachelor's or Master’s degree in Computer Science, Statistics, Mathematics, or related field.
+- 2+ years experience in applied machine learning or data science.
+
+Keywords: machine learning, feature engineering, scikit-learn, PyTorch, TensorFlow, SQL, Docker, Kubernetes, NLP, embeddings
