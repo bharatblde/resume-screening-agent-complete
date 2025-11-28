@@ -1,64 +1,193 @@
-# Resume Screening Agent (Complete ZIP)
+Resume Screening AI Agent
 
-This is a ready-to-run project for the Resume Screening Agent with a clean, responsive Streamlit UI.
-It supports OpenAI embeddings and chat (if you provide an API key), and falls back to a local sentence-transformers model.
+An intelligent AI-powered system that analyzes resumes, matches them with a job description, and ranks candidates based on relevance.
+Built as part of the 48-Hour AI Agent Development Challenge.
 
-## What's included
-- `app.py` — Streamlit frontend (dark/light theme, Lottie hooks, badges, download results)
-- `scorer.py` — embeddings + scoring (OpenAI primary, local fallback)
-- `parser.py` — extract text from PDF / DOCX / TXT
-- `prompts.py` — summary prompt for LLM
-- `requirements.txt` — packages
-- `assets/` — placeholder Lottie JSONs and `logo.svg`
-- `sample_jd.txt` and two sample resumes in `sample_resumes/`
+🚀 Overview
 
-## How to run (Windows)
-1. Extract the ZIP into `D:\resume-screening-agent-full` (or your chosen folder).
-2. Open Command Prompt and activate venv:
-   ```cmd
-   cd D:\resume-screening-agent-full
-   python -m venv venv
-   venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```cmd
-   pip install -r requirements.txt
-   ```
-   If `sentence-transformers` is slow or causes issues, run:
-   ```cmd
-   pip install streamlit streamlit-lottie pdfminer.six python-docx scikit-learn numpy pandas
-   pip install sentence-transformers
-   ```
-4. (Optional) Install Lottie support:
-   ```cmd
-   pip install streamlit-lottie
-   ```
-5. (Optional) Set your OpenAI API key (do not paste secret in code):
-   ```cmd
-   setx OPENAI_API_KEY "sk-...your_key_here..."
-   ```
-   Then restart the terminal.
-6. Run the app:
-   ```cmd
-   streamlit run app.py
-   ```
+The Resume Screening Agent helps HR teams and recruiters automatically evaluate candidate resumes.
 
-## How to run (Linux / macOS)
-```bash
-python3 -m venv venv
+You simply upload:
+
+✔ A Job Description (JD)
+✔ Multiple Resumes (PDF, DOCX, TXT)
+
+The system extracts text, computes embeddings, calculates similarity, and ranks the resumes from highest to lowest match.
+
+If an OpenAI API key is available, the system uses GPT models for high-quality embeddings and AI summaries.
+If not, it switches automatically to local offline embedding models using sentence-transformers.
+
+🌟 Features
+🔍 AI Resume Scoring
+
+Rank resumes based on similarity to JD
+
+View individual scores
+
+Full resume text preview
+
+📝 Candidate Summary (AI-powered)
+
+Generates a structured summary
+
+Shows:
+
+Top matching skills
+
+Missing skills
+
+Fit analysis
+
+💻 Modern UI (Streamlit)
+
+Clean responsive design
+
+Light/Dark theme support
+
+Download CSV of ranked candidates
+
+📂 File Support
+
+PDF
+
+DOCX
+
+TXT
+
+⚡ Optimized Performance
+
+Embedding cache to avoid recomputation
+
+Local ML model fallback
+
+Fast scoring for multiple resumes
+
+⚠️ Limitations
+
+Scanned (image-only) PDFs may return empty text
+
+Local fallback model is less accurate than GPT embeddings
+
+Large files may take longer to parse
+
+AI summary requires OpenAI key
+
+🧰 Tech Stack
+Backend / AI
+
+Python
+
+sentence-transformers (local fallback)
+
+OpenAI API (optional for high-accuracy embeddings & AI chat)
+
+scikit-learn (cosine similarity)
+
+Frontend
+
+Streamlit
+
+Custom CSS for UI styling
+
+Parsing
+
+pdfminer.six
+
+python-docx
+
+Data & Storage
+
+Temp uploads: temp_uploads/
+
+Embedding cache: emb_cache/
+
+Assets: assets/
+
+📦 Folder Structure
+resume-screening-agent/
+│
+├── app.py
+├── parser.py
+├── scorer.py
+├── prompts.py
+├── requirements.txt
+│
+├── assets/
+│   ├── logo.svg
+│   ├── funny_ai.json (optional)
+│   ├── ai_glossy.json (optional)
+│   └── job_colorful.json (optional)
+│
+├── temp_uploads/      (auto created)
+├── emb_cache/         (auto created)
+├── README.md
+
+🛠 Setup & Run Instructions
+1️⃣ Clone the Repo
+git clone https://github.com/yourusername/resume-screening-agent.git
+cd resume-screening-agent
+
+2️⃣ Create Virtual Environment
+python -m venv venv
+
+3️⃣ Activate Environment
+
+Windows:
+
+venv\Scripts\activate
+
+
+Mac/Linux:
+
 source venv/bin/activate
+
+4️⃣ Install Dependencies
 pip install -r requirements.txt
+
+5️⃣ Optional: Set OpenAI Key
+
+(Needed for GPT embeddings + AI summaries)
+
+Windows:
+
+setx OPENAI_API_KEY "your_api_key_here"
+
+
+Mac/Linux:
+
+export OPENAI_API_KEY="your_api_key_here"
+
+6️⃣ Run the App
 streamlit run app.py
-```
 
-## Notes & Troubleshooting
-- If you want me to include your exact local files (images, previous scorer, sample resumes) upload them here and I'll rebuild a ZIP that contains them.
-- The app will fall back to local sentence-transformers if OpenAI API is not configured, but ensure `sentence-transformers` is installed.
-- Lottie animations are optional; if `streamlit-lottie` isn't installed the UI still works.
-- Do **NOT** commit your OpenAI API key to source control. Use environment variables.
+🧠 How It Works (Architecture)
 
-If you want, I can now:
-- Replace placeholder Lotties with high-detail animations (I can fetch them if you give links)
-- Integrate any files you upload (resume PDFs, your real scorer.py, logo.png)
-- Produce a short demo script for your hackathon submission
+Streamlit UI receives uploaded resumes & JD
 
+parser.py extracts text from files
+
+scorer.py generates embeddings (OpenAI or local)
+
+Cosine similarity scores each resume
+
+Results displayed in ranked order
+
+Optional AI summary generated with GPT
+
+🔮 Future Enhancements
+
+Add Pinecone/Chroma vector DB support
+
+Add OCR for scanned PDFs
+
+Add job-role specific scoring templates
+
+Improve UI with animations & charts
+
+Deploy to Streamlit Cloud / Render / HuggingFace
+
+👤 Author
+
+Bharat
+Built for the Rooman 48-Hour AI Agent Development Challenge
+With ❤️ and Python 🐍
