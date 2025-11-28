@@ -137,7 +137,7 @@ with st.sidebar:
         st.markdown("- Lottie: not installed (optional)")
         st.markdown("  Install: pip install streamlit-lottie")
     st.markdown("---")
-    st.caption("Made with ❤️ by Bharat — Hackathon Ready!")
+    st.caption("Made with ❤️ by Bharat !")
 
 # ---------- Animated header (keeps theme friendly) ----------
 st.markdown("<div class='header-anim'><h1 style='margin:6px 0 2px 0'>Resume Screening Agent</h1><div style='font-size:14px; opacity:0.95'>Upload a Job Description and multiple resumes. AI ranks & summarizes candidates.</div></div>", unsafe_allow_html=True)
